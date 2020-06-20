@@ -18,6 +18,12 @@ function hitung() {
   } else if (golongan.value == 2) {
     blokPakai1 = 3500;
     blokPakai2 = 4500;
+  } else if (golongan.value == 3) {
+    blokPakai1 = 3900;
+    blokPakai2 = 5500;
+  } else if (golongan.value == 4) {
+    blokPakai1 = 5000;
+    blokPakai2 = 7000;
   }
 
   let kubikasi10kibik = blokPakai1 * 10;
