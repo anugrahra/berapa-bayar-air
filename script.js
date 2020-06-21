@@ -3,6 +3,7 @@ const stBulanLalu = document.querySelector('#stBulanLalu');
 const stBulanSekarang = document.querySelector('#stBulanSekarang');
 const submit = document.querySelector('#submit');
 const hasil = document.querySelector('#hasil');
+const rp = document.querySelector('#rp');
 
 submit.addEventListener('click', hitung);
 
@@ -33,4 +34,6 @@ function hitung() {
   } else {
     hasil.textContent = kubikasi10kibik + beban + (kubikasi - 10) * blokPakai2;
   }
+
+  rp.classList.remove("rp");
 }

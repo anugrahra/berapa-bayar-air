@@ -5,21 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berapa Bayar Air</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Berapa Bayar Air</h1>
-  <div>
-    <label for="golongan">Golongan</label><br>
-    <input type="number" id="golongan" value="1"><br>
-    <label for="stBulanLalu">Stand Bulan Lalu</label><br>
-    <input type="number" id="stBulanLalu"><br>
-    <label for="stBulanSekarang">Stand Bulan Sekarang</label><br>
-    <input type="number" id="stBulanSekarang"><br><br>
-    <button id="submit">Submit</button>
-  </div>
+  <div class="container">
+    <h1>Berapa Bayar Air</h1>
+    <hr>
+    <div class="form">
+      <label for="golongan">Golongan</label><br>
+      <select id="golongan" required>
+        <option value="1" selected>Golongan 1</option>
+        <option value="2">Golongan 2</option>
+        <option value="3">Golongan 3</option>
+        <option value="4">Golongan 4</option>
+      </select>
+      <br>
+      <label for="stBulanLalu">Stand Bulan Lalu</label><br>
+      <input type="number" id="stBulanLalu" required><br>
+      <label for="stBulanSekarang">Stand Bulan Sekarang</label><br>
+      <input type="number" id="stBulanSekarang" required><br><br>
+      <button id="submit">Submit</button>
+    </div>
 
-  <h2 id="hasil"></h2>
+    <div id="containerhasil">
+      <span id="rp" class="rp">Rp. </span>
+      <span id="hasil"></span>
+    </div>
+  </div>
 </body>
 
 <script src="script.js"></script>

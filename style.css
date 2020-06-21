@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.container {
+  margin-left: 15px;
+}
+
+.form {
+  font-size: 1.5em;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+select,
+input {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  height: 30px;
+}
+
+#containerhasil {
+  margin-top: 20px;
+  margin-left: 10px;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+.rp {
+  display: none;
+}
+
+#submit {
+  height: 40px;
+  width: 50px;
+}
