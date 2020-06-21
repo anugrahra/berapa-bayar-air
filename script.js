@@ -3,8 +3,12 @@ const stBulanLalu = document.querySelector('#stBulanLalu');
 const stBulanSekarang = document.querySelector('#stBulanSekarang');
 const submit = document.querySelector('#submit');
 const hasil = document.querySelector('#hasil');
+const labelPemakaian = document.querySelector('#labelPemakaian');
+const labelKubikasi = document.querySelector('#labelKubikasi');
+const pemakaian = document.querySelector('#pemakaian');
 const rp = document.querySelector('#rp');
 
+stBulanLalu.focus();
 submit.addEventListener('click', hitung);
 
 function hitung() {
@@ -35,5 +39,9 @@ function hitung() {
     hasil.textContent = kubikasi10kibik + beban + (kubikasi - 10) * blokPakai2;
   }
 
+  pemakaian.textContent = stBulanSekarang.value - stBulanLalu.value;
+
+  labelPemakaian.classList.remove("rp");
+  labelKubikasi.classList.remove("rp");
   rp.classList.remove("rp");
 }

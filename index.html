@@ -11,6 +11,7 @@
 <body>
   <div class="container">
     <h1>Berapa Bayar Air</h1>
+    <small>UPTD Air Minum Kota Cimahi</small>
     <hr>
     <div class="form">
       <label for="golongan">Golongan</label><br>
@@ -25,16 +26,22 @@
       <input type="number" id="stBulanLalu" required><br>
       <label for="stBulanSekarang">Stand Bulan Sekarang</label><br>
       <input type="number" id="stBulanSekarang" required><br><br>
-      <button id="submit">Submit</button>
+      <button id="submit">Hitung</button>
     </div>
 
     <div id="containerhasil">
-      <span id="rp" class="rp">Rp. </span>
+      <span id="labelPemakaian" class="rp">Pemakaian: </span>
+      <span id="pemakaian"></span>
+      <span id="labelKubikasi" class="rp"> m<sup>3</sup></span>
+      <br>
+      <span id="rp" class="rp">Bayar: Rp. </span>
       <span id="hasil"></span>
     </div>
   </div>
 </body>
 
 <script src="script.js"></script>
+
+<footer>&copy; 2020, <a href="https://dekadensiotak.id">dekadensiotak</a></footer>
 
 </html>

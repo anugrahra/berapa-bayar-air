@@ -28,7 +28,7 @@ input {
 #containerhasil {
   margin-top: 20px;
   margin-left: 10px;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: bolder;
 }
 
@@ -37,6 +37,22 @@ input {
 }
 
 #submit {
-  height: 40px;
-  width: 50px;
+  font-size: 1.5em;
+  height: 50px;
+  width: 120px;
+}
+
+#pemakaian,
+#hasil {
+  color: red;
+}
+
+footer {
+  margin-left: 15px;
+  font-style: italic;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
