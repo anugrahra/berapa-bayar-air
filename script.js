@@ -7,6 +7,7 @@ const labelPemakaian = document.querySelector('#labelPemakaian');
 const labelKubikasi = document.querySelector('#labelKubikasi');
 const pemakaian = document.querySelector('#pemakaian');
 const rp = document.querySelector('#rp');
+const tahun = document.querySelector('#tahun');
 
 stBulanLalu.focus();
 submit.addEventListener('click', hitung);
@@ -45,3 +46,5 @@ function hitung() {
   labelKubikasi.classList.remove("rp");
   rp.classList.remove("rp");
 }
+
+tahun.textContent = new Date().getFullYear();
