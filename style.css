@@ -56,3 +56,8 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+footer a {
+  color: black;
+  text-decoration: underline;
+}
