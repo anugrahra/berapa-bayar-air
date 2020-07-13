@@ -32,6 +32,11 @@ input {
   font-weight: bolder;
 }
 
+.rincian {
+  font-size: 0.65em !important;
+  font-weight: lighter !important;
+}
+
 .rp {
   display: none;
 }

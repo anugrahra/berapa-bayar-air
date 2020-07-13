@@ -8,6 +8,12 @@ const labelKubikasi = document.querySelector('#labelKubikasi');
 const pemakaian = document.querySelector('#pemakaian');
 const rp = document.querySelector('#rp');
 const tahun = document.querySelector('#tahun');
+const labelAdministrasi = document.querySelector('#labelAdministrasi');
+const administrasi = document.querySelector('#administrasi');
+const labelBiayaI = document.querySelector('#labelBiayaI');
+const biayai = document.querySelector('#biayai');
+const labelBiayaII = document.querySelector('#labelBiayaII');
+const biayaii = document.querySelector('#biayaii');
 
 stBulanLalu.focus();
 submit.addEventListener('click', hitung);
@@ -36,15 +42,23 @@ function hitung() {
 
   if (kubikasi <= 10) {
     hasil.textContent = kubikasi * blokPakai1 + beban;
+    biayai.textContent = kubikasi * blokPakai1;
+    biayaii.textContent = 0;
   } else {
     hasil.textContent = kubikasi10kibik + beban + (kubikasi - 10) * blokPakai2;
+    biayai.textContent = (kubikasi - (kubikasi - 10)) * blokPakai1;
+    biayaii.textContent = (kubikasi - 10) * blokPakai2;
   }
 
   pemakaian.textContent = stBulanSekarang.value - stBulanLalu.value;
+  administrasi.textContent = beban;
 
   labelPemakaian.classList.remove("rp");
   labelKubikasi.classList.remove("rp");
   rp.classList.remove("rp");
+  labelAdministrasi.classList.remove("rp");
+  labelBiayaI.classList.remove("rp");
+  labelBiayaII.classList.remove("rp");
 }
 
 tahun.textContent = new Date().getFullYear();
