@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Berapa Bayar Air</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -24,54 +26,106 @@
 
 <body>
   <div class="container">
-    <h1>Berapa Bayar Air</h1>
-    <small>UPTD Air Minum Kota Cimahi</small>
+    <div class="row">
+      <div class="col">
+        <h1>Berapa Bayar Air</h1>
+        <small>UPTD Air Minum Kota Cimahi</small>
+      </div>
+    </div>
     <hr>
-    <div class="form">
-      <label for="golongan">Golongan</label><br>
-      <select id="golongan" required>
-        <option value="1" selected>Golongan 1</option>
-        <option value="2">Golongan 2</option>
-        <option value="3">Golongan 3</option>
-        <option value="4">Golongan 4</option>
-      </select>
-      <br>
-      <label for="stBulanLalu">Stand Bulan Lalu</label><br>
-      <input type="number" id="stBulanLalu" required><br>
-      <label for="stBulanSekarang">Stand Bulan Sekarang</label><br>
-      <input type="number" id="stBulanSekarang" required><br><br>
-      <button id="submit">Hitung</button>
+
+    <div class="row justify-content-center">
+      <div class="col-11 col-md-6 col-lg-6">
+        <div class="form-group">
+          <label for="golongan">Golongan</label>
+          <select class="custom-select" id="golongan" required>
+            <option value="1">Golongan 1</option>
+            <option value="2">Golongan 2</option>
+            <option value="3">Golongan 3</option>
+            <option value="4">Golongan 4</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="stBulanLalu">Stand Bulan Lalu</label>
+          <input type="number" class="form-control" id="stBulanLalu" required>
+        </div>
+        <div class="form-group">
+          <label for="stBulanSekarang">Stand Bulan Sekarang</label>
+          <input type="number" class="form-control" id="stBulanSekarang" required>
+        </div>
+        <button id="submit" class="btn btn-primary" data-toggle="modal" data-target="#rincianModal">Hitung</button>
+      </div>
     </div>
 
-    <div id="containerhasil">
-      <span class="rincian">
-        <span id="labelPemakaian" class="rp">Pemakaian: </span>
-        <span id="pemakaian"></span>
-        <span id="labelKubikasi" class="rp"> m<sup>3</sup></span>
-        <br>
-        <span id="labelAdministrasi" class="rp">Beban Tetap Administrasi: Rp. </span>
-        <span id="administrasi"></span>
-        <br>
-        <span id="labelBiayaI" class="rp">Blok I: Rp. </span>
-        <span id="biayai"></span>
-        <br>
-        <span id="labelBiayaII" class="rp">Blok II: Rp. </span>
-        <span id="biayaii"></span>
-      </span>
-      <br>
-      <span id="rp" class="rp">Total: Rp. </span>
-      <span id="hasil"></span>
+    <!-- Modal -->
+    <div class="modal fade" id="rincianModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Rincian Tagihan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <span id="labelPemakaian" class="rp">Pemakaian</span>
+                  </td>
+                  <td>&nbsp;:&nbsp;</td>
+                  <td>
+                    <span id="pemakaian"></span>
+                    <span id="labelKubikasi" class="rp"> m<sup>3</sup></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span id="labelAdministrasi" class="rp">Beban Tetap Administrasi</span>
+                  </td>
+                  <td>&nbsp;:&nbsp;</td>
+                  <td>Rp. <span id="administrasi"></span></td>
+                </tr>
+                <tr>
+                  <td><span id="labelBiayaI" class="rp">Blok I</span></td>
+                  <td>&nbsp;:&nbsp;</td>
+                  <td>Rp. <span id="biayai"></span></td>
+                </tr>
+                <tr>
+                  <td><span id="labelBiayaII" class="rp">Blok II</span></td>
+                  <td>&nbsp;:&nbsp;</td>
+                  <td>Rp. <span id="biayaii"></span></td>
+                </tr>
+                <tr class="totalTagihan">
+                  <td><span id="rp" class="rp">Total</span></td>
+                  <td>&nbsp;:&nbsp;</td>
+                  <td>Rp. <span id="hasil"></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </body>
 
-<footer>
+<footer class="text-center">
   <p>&copy; <span id="tahun"></span>, UPTD AM Cimahi</p>
-  <p>powered by <a href="https://dekadensiotak.id">dekadensiotak</a> | <a
-      href="https://github.com/anugrahra/berapa-bayar-air">GitHub
-      Project</a></p>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 
 </html>
