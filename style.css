@@ -6,7 +6,6 @@ h1 {
   margin-bottom: 5px;
 }
 
-
 .rp {
   display: none;
 }
@@ -34,4 +33,9 @@ footer a {
 .totalTagihan {
   font-weight: bolder;
   font-size: larger;
+}
+
+#kelompokPelanggan {
+  font-weight: bolder;
+  color: red;
 }
