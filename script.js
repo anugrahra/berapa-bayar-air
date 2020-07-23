@@ -14,6 +14,8 @@ const labelBiayaI = document.querySelector('#labelBiayaI');
 const biayai = document.querySelector('#biayai');
 const labelBiayaII = document.querySelector('#labelBiayaII');
 const biayaii = document.querySelector('#biayaii');
+const exampleModalLabel = document.querySelector('#exampleModalLabel');
+const kelompokPelanggan = document.querySelector('#kelompokPelanggan');
 
 stBulanLalu.focus();
 submit.addEventListener('click', hitung);
@@ -28,24 +30,26 @@ function hitung() {
   if (golongan.value == 1) {
     blokPakai1 = 1800;
     blokPakai2 = 3500;
-    submit.setAttribute('data-target', '#rincianModal');
+    kelompokPelanggan.textContent = "Kelompok Pelanggan 1";
   } else if (golongan.value == 2) {
     blokPakai1 = 3500;
     blokPakai2 = 4500;
-    submit.setAttribute('data-target', '#rincianModal');
+    kelompokPelanggan.textContent = "Kelompok Pelanggan 2";
   } else if (golongan.value == 3) {
     blokPakai1 = 3900;
     blokPakai2 = 5500;
-    submit.setAttribute('data-target', '#rincianModal');
+    kelompokPelanggan.textContent = "Kelompok Pelanggan 3";
   } else if (golongan.value == 4) {
     blokPakai1 = 5000;
     blokPakai2 = 7000;
-    submit.setAttribute('data-target', '#rincianModal');
+    kelompokPelanggan.textContent = "Kelompok Pelanggan 4";
   } else {
-    submit.removeAttribute('data-target');
-    confirm('Harap pilih kelompok pelanggan terlebih dahulu');
+    blokPakai1 = 0;
+    blokPakai2 = 0;
+    beban = 0;
+    kubikasi = 0;
+    kelompokPelanggan.textContent = "Mohon pilih kelompok pelanggan terlebih dahulu";
   }
-
 
   if (kubikasi <= 10) {
     hasil.textContent = kubikasi * blokPakai1 + beban;

@@ -54,7 +54,7 @@
           <label for="stBulanSekarang">Stand Bulan Sekarang</label>
           <input type="number" class="form-control" id="stBulanSekarang" required>
         </div>
-        <button id="submit" class="btn btn-primary" data-toggle="modal">Hitung</button>
+        <button id="submit" class="btn btn-primary" data-toggle="modal" data-target="#rincianModal">Hitung</button>
       </div>
     </div>
 
@@ -70,6 +70,7 @@
             </button>
           </div>
           <div class="modal-body">
+            <h5 id="kelompokPelanggan"></h5>
             <table>
               <tbody>
                 <tr>
