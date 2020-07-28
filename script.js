@@ -23,9 +23,9 @@ submit.addEventListener('click', hitung);
 function hitung() {
   let beban = 15000;
   let kubikasi = stBulanSekarang.value - stBulanLalu.value;
-  let blokPakai1 = '';
-  let blokPakai2 = '';
-  let kubikasi10kibik = blokPakai1 * 10;
+  let blokPakai1 = 0;
+  let blokPakai2 = 0;
+
 
   if (golongan.value == 1) {
     blokPakai1 = 1800;
@@ -50,6 +50,8 @@ function hitung() {
     kubikasi = 0;
     kelompokPelanggan.textContent = "Mohon pilih kelompok pelanggan terlebih dahulu";
   }
+
+  let kubikasi10kibik = blokPakai1 * 10;
 
   if (kubikasi <= 10) {
     hasil.textContent = kubikasi * blokPakai1 + beban;
